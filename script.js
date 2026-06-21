@@ -19,6 +19,17 @@ document.querySelectorAll('[data-booking]').forEach(el => {
   }
 });
 
+// Hero slideshow — crossfade every 6 seconds
+const slides = document.querySelectorAll('.hero-slide');
+if (slides.length > 1) {
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, 6000);
+}
+
 // Mobile navigation toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');

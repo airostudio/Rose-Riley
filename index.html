@@ -42,7 +42,12 @@
                 <div class="hero-circle hero-circle-1"></div>
                 <div class="hero-circle hero-circle-2"></div>
                 <div class="hero-circle hero-circle-3"></div>
-                <img src="public/rose-reilly.jpg" alt="" class="hero-portrait" aria-hidden="true">
+                <!-- Rotating slideshow — 3 themed illustrations at 30% opacity -->
+                <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+                    <img src="public/hero-1.svg" class="hero-slide is-active" alt="">
+                    <img src="public/hero-2.svg" class="hero-slide" alt="">
+                    <img src="public/hero-3.svg" class="hero-slide" alt="">
+                </div>
             </div>
             <div class="hero-content">
                 <span class="eyebrow">Telehealth Psychology &middot; Australia</span>
@@ -78,6 +83,9 @@
                     </div>
 
                     <aside class="about-sidebar">
+                        <div class="about-portrait-wrap">
+                            <img src="public/rose-reilly.jpg" alt="Rose Reilly, Psychologist" class="about-portrait">
+                        </div>
                         <div class="info-card">
                             <h3>Qualifications</h3>
                             <ul>

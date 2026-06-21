@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Horizon — layered rolling hills with soft sunrise -->
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4D9CC"/>
+      <stop offset="100%" stop-color="#EBF1EC"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="30%" cy="42%" r="22%">
+      <stop offset="0%" stop-color="#D4A878" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#B8906A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#B8906A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1400" height="900" fill="url(#sky2)"/>
+
+  <!-- Sun glow -->
+  <rect width="1400" height="900" fill="url(#sun)"/>
+
+  <!-- Distant hills - lightest -->
+  <path d="M0,520 Q200,440 400,490 Q600,540 800,470 Q1000,400 1200,460 Q1350,500 1400,480 L1400,900 L0,900Z"
+        fill="#8DAA93" opacity="0.55"/>
+
+  <!-- Mid hills -->
+  <path d="M0,620 Q250,540 500,590 Q700,640 900,570 Q1100,500 1300,580 L1400,600 L1400,900 L0,900Z"
+        fill="#6B8F71" opacity="0.75"/>
+
+  <!-- Near hills -->
+  <path d="M0,730 Q300,660 600,700 Q850,740 1100,670 Q1280,620 1400,680 L1400,900 L0,900Z"
+        fill="#4A6A50" opacity="0.85"/>
+
+  <!-- Foreground -->
+  <path d="M0,830 Q250,790 500,810 Q750,830 1000,800 Q1200,775 1400,810 L1400,900 L0,900Z"
+        fill="#2A3E28"/>
+
+  <!-- Horizon mist line -->
+  <path d="M0,480 Q700,430 1400,475" stroke="#C4D9CC" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>
