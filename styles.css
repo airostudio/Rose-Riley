@@ -276,6 +276,17 @@ h2.light { color: var(--white); }
   inset: 0;
   pointer-events: none;
 }
+
+.hero-portrait {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.3;
+}
 .hero-circle {
   position: absolute;
   border-radius: 50%;
@@ -839,6 +850,7 @@ h2.light { color: var(--white); }
   /* Hero */
   .hero-circle-1 { width: 400px; height: 400px; top: -120px; right: -120px; }
   .hero-circle-2 { display: none; }
+  .hero-portrait { display: none; }
 
   /* Areas */
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
