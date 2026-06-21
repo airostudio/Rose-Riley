@@ -1,3 +1,24 @@
+/* ─────────────────────────────────────────────────────────────
+   CONFIGURATION
+   When Rose's Coreplus Client Portal is live, paste the portal
+   URL below (e.g. "https://rosereilly.au.clientsecure.me").
+   All booking buttons on the page update automatically.
+   Leave empty to keep buttons pointing to the enquiry form.
+   ───────────────────────────────────────────────────────────── */
+const COREPLUS_BOOKING_URL = '';   // ← paste Coreplus portal URL here
+
+// Wire all booking buttons
+document.querySelectorAll('[data-booking]').forEach(el => {
+  if (COREPLUS_BOOKING_URL) {
+    el.href = COREPLUS_BOOKING_URL;
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener noreferrer');
+  } else {
+    el.href = '#contact';
+    el.removeAttribute('target');
+  }
+});
+
 // Mobile navigation toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');

@@ -538,6 +538,20 @@ h2.light { color: var(--white); }
   align-items: start;
 }
 
+.booking-via {
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--grey);
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+.coreplus-link {
+  color: var(--sage-dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+.coreplus-link:hover { color: var(--accent); text-decoration: underline; }
+
 .form-divider {
   display: flex;
   align-items: center;
