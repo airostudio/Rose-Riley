@@ -652,7 +652,12 @@ h2.light { color: var(--white); }
 
 .required { color: var(--accent); }
 
-.form-group input,
+.form-group input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.form-group input:not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
   font-family: var(--font-sans);
