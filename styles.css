@@ -347,6 +347,17 @@ h2.light { color: var(--white); }
   margin-bottom: 2.25rem;
 }
 
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage-dark);
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;

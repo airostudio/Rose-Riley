@@ -5,7 +5,7 @@
    All booking buttons on the page update automatically.
    Leave empty to keep buttons pointing to the enquiry form.
    ───────────────────────────────────────────────────────────── */
-const COREPLUS_BOOKING_URL = 'https://rosereilly.au.clientsecure.me';
+const COREPLUS_BOOKING_URL = '';
 
 // Wire all booking buttons
 document.querySelectorAll('[data-booking]').forEach(el => {
