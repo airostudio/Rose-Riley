@@ -10,7 +10,10 @@
 process.setMaxListeners(25);
 
 const ROSE_EMAIL   = 'rose@rosereilly.com.au';
-const FROM_ADDRESS = 'Rose Reilly Psychology <noreply@rosereilly.com.au>';
+// RESEND_FROM must use a domain verified in your Resend account.
+// Set this in Vercel → Settings → Environment Variables.
+// Example: "Rose Reilly Psychology <noreply@rosereilly.com.au>"
+const FROM_ADDRESS = process.env.RESEND_FROM || 'Rose Reilly Psychology <noreply@rosereilly.com.au>';
 
 const REFERRAL_LABELS = {
   self:       'Self-referral',
