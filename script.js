@@ -53,14 +53,15 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('is-scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// Basic client-side form feedback
+// Contact form — POST to /api/contact, send emails via Resend
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Client-side validation
     const required = form.querySelectorAll('[required]');
     let valid = true;
-
     required.forEach(field => {
       field.style.borderColor = '';
       if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
@@ -68,16 +69,46 @@ if (form) {
         valid = false;
       }
     });
-
-    if (valid) {
-      // Replace this block with your form submission logic (e.g. Formspree, fetch, etc.)
-      const btn = form.querySelector('[type="submit"]');
-      btn.textContent = 'Enquiry sent — thank you.';
-      btn.disabled = true;
-      form.reset();
-    } else {
+    if (!valid) {
       const firstInvalid = form.querySelector('[required][style*="C0392B"]');
       if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    const btn = form.querySelector('[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:       data.get('name'),
+          email:      data.get('email'),
+          phone:      data.get('phone'),
+          referral:   data.get('referral'),
+          message:    data.get('message'),
+          hearAbout:  data.get('hearAbout'),
+        }),
+      });
+
+      const json = await res.json();
+
+      if (res.ok) {
+        btn.textContent = 'Enquiry sent — thank you.';
+        form.reset();
+      } else {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert(json.error || 'Something went wrong. Please try again or contact Rose directly.');
+      }
+    } catch {
+      btn.textContent = originalText;
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or contact Rose on 08 6185 8254.');
     }
   });
 }
