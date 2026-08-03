@@ -3,6 +3,12 @@
 // Required env var: RESEND_API_KEY (set in Vercel project settings)
 // The `from` domain (rosereilly.com.au) must be verified in your Resend account.
 
+// Prevent MaxListenersExceededWarning on warm Vercel invocations:
+// the Node fetch/undici internals add a `close` listener per request and
+// accumulate across reused processes. Setting a higher ceiling suppresses
+// the false-positive warning without masking real leaks.
+process.setMaxListeners(25);
+
 const ROSE_EMAIL   = 'rose@rosereilly.com.au';
 const FROM_ADDRESS = 'Rose Reilly Psychology <noreply@rosereilly.com.au>';
 
