@@ -88,7 +88,7 @@ function confirmationHtml(name) {
         <tr><td style="padding:0 36px;"><div style="border-top:1px solid #E2DDD6;"></div></td></tr>
         <!-- Crisis footer -->
         <tr><td style="padding:20px 36px 28px;">
-          <p style="margin:0 0 8px;font-family:Arial,sans-serif;font-size:12px;line-height:1.65;color:#6B7280;"><strong>Not a crisis service.</strong> If you or someone else is in immediate danger, call <strong>000</strong>. For 24/7 crisis support: Lifeline 13&nbsp;11&nbsp;14 &middot; Beyond Blue 1300&nbsp;22&nbsp;4636.</p>
+          <p style="margin:0 0 8px;font-family:Arial,sans-serif;font-size:12px;line-height:1.65;color:#6B7280;"><strong>Not a crisis service.</strong> If you or someone else is in immediate danger, call <strong>000</strong>.<br>For 24/7 crisis support: Lifeline 13&nbsp;11&nbsp;14 &middot; Beyond Blue 1300&nbsp;22&nbsp;4636.</p>
           <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;color:#9CA3AF;">Rose Reilly Psychology &middot; Provider No.&nbsp;257129EX &middot; AHPRA Registered Psychologist</p>
         </td></tr>
       </table>
