@@ -133,7 +133,7 @@ function notificationHtml(data) {
           <table cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #E2DDD6;margin-bottom:24px;">
             ${row('Name', safeName)}
             ${row('Email', `<a href="mailto:${safeEmail}" style="color:#4A6A50;">${safeEmail}</a>`)}
-            ${row('Phone', safePhone !== '—' ? `<a href="tel:${safeEmail}" style="color:#4A6A50;">${safePhone}</a>` : '—')}
+            ${row('Phone', safePhone !== '—' ? `<a href="tel:${safePhone.replace(/\s/g, '')}" style="color:#4A6A50;">${safePhone}</a>` : '—')}
             ${row('Referral type', referralText)}
             ${row('Heard about practice', hearAboutText)}
           </table>
