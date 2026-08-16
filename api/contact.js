@@ -9,7 +9,7 @@
 // the false-positive warning without masking real leaks.
 process.setMaxListeners(25);
 
-const ROSE_EMAIL   = 'info@rosereillypsychology.com';
+const ROSE_EMAIL   = 'rose@rosereilly.com.au';
 // RESEND_FROM must use a domain verified in your Resend account.
 // Set this in Vercel → Settings → Environment Variables.
 // Example: "Rose Reilly Psychology <info@rosereillypsychology.com>"
