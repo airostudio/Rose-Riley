@@ -364,6 +364,43 @@ h2.light { color: var(--white); }
   flex-wrap: wrap;
 }
 
+/* ── Meet Rose ─────────────────────────────────────────────── */
+.meet-rose-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.meet-rose-portrait-wrap {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  width: 180px;
+  height: 180px;
+}
+
+.meet-rose-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.meet-rose-text h2 { margin-bottom: 0.75rem; }
+.meet-rose-text p { color: var(--charcoal-mid); margin-bottom: 1rem; max-width: 640px; }
+
+.link-arrow {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--sage-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage-mid);
+  padding-bottom: 0.15rem;
+}
+.link-arrow:hover { color: var(--sage); border-color: var(--sage); }
+
 /* ── About ─────────────────────────────────────────────────── */
 .about-layout {
   display: grid;
@@ -530,6 +567,14 @@ h2.light { color: var(--white); }
   border-bottom: 1px solid var(--border);
 }
 .referral-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.referral-item-highlight {
+  background: var(--sage-light);
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.1rem 1.4rem;
+}
+.referral-item-highlight h4 { color: var(--sage-dark); }
 
 .referral-item h4 {
   margin-bottom: 0.5rem;
@@ -892,6 +937,10 @@ h2.light { color: var(--white); }
   :root { --section-pad: 3.5rem; }
 
   .section { padding: 3.5rem 0; }
+
+  .meet-rose-layout { grid-template-columns: 1fr; text-align: center; }
+  .meet-rose-portrait-wrap { margin: 0 auto; }
+  .meet-rose-text p { margin-left: auto; margin-right: auto; }
 
   /* Nav mobile */
   .nav-toggle { display: flex; }
