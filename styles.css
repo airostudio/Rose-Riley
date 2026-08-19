@@ -339,6 +339,15 @@ h2.light { color: var(--white); }
   margin-bottom: 1.25rem;
 }
 
+.hero-location {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--sage-dark);
+  max-width: 560px;
+  margin-bottom: 1.25rem;
+}
+
 .hero-sub {
   font-size: 1.1rem;
   color: var(--charcoal-mid);
