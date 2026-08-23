@@ -9,11 +9,13 @@
 // the false-positive warning without masking real leaks.
 process.setMaxListeners(25);
 
+// Where enquiries land and where confirmation replies go — Rose's real inbox.
 const ROSE_EMAIL   = 'rose@rosereilly.com.au';
-// RESEND_FROM must use a domain verified in your Resend account.
-// Set this in Vercel → Settings → Environment Variables.
-// Example: "Rose Reilly Psychology <rose@rosereilly.com.au>"
-const FROM_ADDRESS = process.env.RESEND_FROM || 'Rose Reilly Psychology <rose@rosereilly.com.au>';
+// The sending (From) address must be on a domain verified in Resend.
+// rosereillypsychology.com is the domain Rose controls DNS for — see
+// resend.com/domains for the exact records still needed to verify it.
+// Set RESEND_FROM in Vercel → Settings → Environment Variables to override.
+const FROM_ADDRESS = process.env.RESEND_FROM || 'Rose Reilly Psychology <info@rosereillypsychology.com>';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
