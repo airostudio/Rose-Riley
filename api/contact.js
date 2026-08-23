@@ -12,8 +12,10 @@ process.setMaxListeners(25);
 const ROSE_EMAIL   = 'rose@rosereilly.com.au';
 // RESEND_FROM must use a domain verified in your Resend account.
 // Set this in Vercel → Settings → Environment Variables.
-// Example: "Rose Reilly Psychology <info@rosereillypsychology.com>"
-const FROM_ADDRESS = process.env.RESEND_FROM || 'Rose Reilly Psychology <info@rosereillypsychology.com>';
+// Example: "Rose Reilly Psychology <rose@rosereilly.com.au>"
+const FROM_ADDRESS = process.env.RESEND_FROM || 'Rose Reilly Psychology <rose@rosereilly.com.au>';
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const REFERRAL_LABELS = {
   self:       'Self-referral',
@@ -80,7 +82,7 @@ function confirmationHtml(name) {
           <p style="margin:0 0 28px;font-size:16px;line-height:1.8;color:#4A5568;">If you need to contact Rose directly in the meantime:</p>
           <table cellpadding="0" cellspacing="0" style="border-left:3px solid #6B8F71;padding-left:16px;margin-bottom:32px;">
             <tr><td style="font-family:Arial,sans-serif;font-size:14px;color:#4A5568;padding:5px 0;"><strong style="color:#2C3233;">Phone</strong>&ensp;08 6185 8254</td></tr>
-            <tr><td style="font-family:Arial,sans-serif;font-size:14px;color:#4A5568;padding:5px 0;"><strong style="color:#2C3233;">Email</strong>&ensp;info@rosereillypsychology.com</td></tr>
+            <tr><td style="font-family:Arial,sans-serif;font-size:14px;color:#4A5568;padding:5px 0;"><strong style="color:#2C3233;">Email</strong>&ensp;rose@rosereilly.com.au</td></tr>
           </table>
           <p style="margin:0;font-size:18px;font-style:italic;color:#6B8F71;line-height:1.4;">You're in safe hands.</p>
         </td></tr>
@@ -166,6 +168,10 @@ module.exports = async function handler(req, res) {
 
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return res.status(400).json({ error: 'Please fill in all required fields.' });
+    }
+
+    if (!EMAIL_RE.test(email.trim())) {
+      return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
     const apiKey = process.env.RESEND_API_KEY;
