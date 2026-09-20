@@ -397,13 +397,11 @@ h2.light { color: var(--white); }
 }
 
 .hero-meet {
-  background: rgba(253, 252, 250, 0.78);
+  background: rgba(253, 252, 250, 0.63);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   box-shadow: 0 12px 40px rgba(44, 50, 51, 0.08);
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
   padding: 2.5rem 2.75rem;
   text-align: center;
 }
