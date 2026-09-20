@@ -397,11 +397,14 @@ h2.light { color: var(--white); }
 }
 
 .hero-meet {
-  background: rgba(253, 252, 250, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(253, 252, 250, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  padding: 2rem 2.25rem;
+  box-shadow: 0 12px 40px rgba(44, 50, 51, 0.08);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
+  padding: 2.5rem 2.75rem;
   text-align: center;
 }
 
@@ -975,7 +978,7 @@ h2.light { color: var(--white); }
 
   .section { padding: 3.5rem 0; }
 
-  .hero-meet { padding: 1.5rem 1.5rem; }
+  .hero-meet { padding: 2rem 1.75rem; }
 
   /* Nav mobile */
   .nav-toggle { display: flex; }
